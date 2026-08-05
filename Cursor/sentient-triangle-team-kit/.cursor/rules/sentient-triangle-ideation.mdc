@@ -1,0 +1,30 @@
+---
+description: Apply when scoping a new AI-enabled feature, exploring how an AI experience could present/behave, prepping design sprint ideation, or when the user asks "what would this look like as a copilot vs. an agent vs. a tool" or references postures / the Sentient Triangle. Use to generate divergent AI interaction concepts before anyone commits to a chatbot-by-default pattern.
+alwaysApply: false
+---
+
+# Sentient Triangle Posture Explorer (Ideation)
+
+Full posture taxonomy and provocation questions: `docs/sentient-triangle-postures.md`. Read it before generating provocations — don't rely on memory of the framework.
+
+Goal: push AI feature ideation past the default chat/copilot pattern by exploring how the same problem would look under genuinely different **postures** (Tools, Chat, Agents, Copilots, and the 18 named postures within them).
+
+## Process
+
+1. **Get the problem framed.** You need the user need / job-to-be-done and the domain context. If not given, ask — don't invent a feature that wasn't described.
+
+2. **Select 3-5 divergent postures.** Don't walk all 18 by default — pick postures that differ sharply in control, initiative, or interface shape. Favor postures from different triangle corners over near-neighbors. Include Copilot as a baseline comparison unless told otherwise. If the user names specific postures, use those.
+
+3. **Write a short provocation per posture**, not a full spec:
+   - The posture's reframe of the problem (1-2 sentences)
+   - Interaction manner (pull from the posture's Role/Embodiment/Relationship in the reference doc, made concrete)
+   - What's structurally different — who acts first, who decides, what happens on failure, does an interface even appear
+   - A concrete one-moment vignette
+
+   Pull 1-2 relevant provocation questions from the reference doc per posture as a spark — don't recite the full list or reuse the same real-world example every session. If a fresh real-world analog would sharpen a provocation, search for one instead of reaching for a stock reference.
+
+4. **Converge into prototype briefs** once 2-4 postures stand out: posture name + premise, core interaction flow (steps), what the interface contains/doesn't contain, moments of AI vs. user initiative, and one explicit failure-mode risk specific to that posture.
+
+5. **Check for genuine bifurcation.** If the resulting briefs only differ in UI skin, not interaction logic, say so and swap one posture for something from a different triangle region.
+
+Keep output scannable — problem statement up top, then one section per posture. This is a working ideation doc, not a report.

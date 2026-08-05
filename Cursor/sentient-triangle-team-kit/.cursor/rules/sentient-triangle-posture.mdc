@@ -1,0 +1,40 @@
+---
+description: Apply when scaffolding, building, or reviewing an AI-mediated feature or prototype that has been assigned a named Sentient Triangle posture (e.g. "build this as a Steward," "prototype the Sculptor version," "this is a Copilot experience"). Also apply when the user references postures, the Sentient Triangle, or asks whether an AI feature's interaction pattern matches its intended posture.
+alwaysApply: false
+---
+
+# Sentient Triangle Posture Fidelity
+
+This project may build multiple divergent prototypes of the same feature, each embodying a different **posture** from Josh Clark & Veronika Kindred's *Sentient Design* framework. The point of building them separately is that they behave differently — not just look different. When a posture is named, hold the build to that posture's constraints below rather than defaulting to a generic chat/copilot pattern.
+
+If no posture has been named for the current task, ask which one applies before scaffolding interaction logic — don't guess.
+
+## Posture constraints
+
+For each posture, three things must be decided deliberately and reflected in the code: **who has initiative** (user- or system-first), **whether a persistent UI exists** (vs. headless/ambient), and **what happens on failure or uncertainty**.
+
+### Tools corner — user controls, system executes on request
+- **Dedicated / Workflow / Inline tools**: user-initiated only. No proactive suggestions, no autonomous action. Errors surface immediately and block progress — don't paper over a failed operation with a friendly retry loop the user didn't ask for.
+- **Sculptor**: turn-based. The system never acts without a user turn in between. Each iteration should be undoable/revisable — build in explicit versioning or undo, not just a fresh regenerate button.
+
+### Chat corner — turn-based, conversational
+- **Characters**: never present the character as an authority. If the code allows the persona to give factual/consequential guidance, add an explicit disclaimer surface — don't rely on the model to self-disclose in-character.
+- **Assistants**: reactive only — no unprompted messages. Scope tool access narrowly and visibly (the user should be able to see what tools/data the assistant can reach).
+- **NPCs**: must use the *same* interaction surface as human participants (same input methods, same visual presence) — don't give the NPC a privileged channel or hidden capabilities. Identity as non-human must be visually unambiguous at all times.
+- **Bespoke UI**: the interface may restructure between turns, but define fixed anchor elements that never move — implement these as a stable layer separate from the generated layer, not regenerated each time.
+- **Intelligent Canvas**: open-ended surface — avoid pre-defining a rigid output schema; let structure emerge from user input, but always give the user a way to extract/export a stable artifact.
+
+### Agents corner — autonomous, cross-system
+- **Tasker**: headless is fine, but every autonomous action must be logged and reversible or confirmable after the fact. If it reaches beyond the screen (notifications, IoT, third-party APIs), require an explicit user-granted scope, not a blanket permission.
+- **Alchemist**: focus on format/channel transformation — don't let this posture accumulate task-execution responsibility (that's Tasker/Steward territory); scope creep here breaks the bifurcation.
+- **Steward**: operates independently between user visits, but must expose an always-current status view answering "what has it done, what's it doing, is it doing well" — build this as a first-class screen, not a buried log.
+- **Conductor**: coordinates other systems/agents toward a high-level goal set by the user. The user sets the goal; the system should not silently redefine it. Surface the plan, not just the outcome.
+
+### Copilot (center) — ambient, proactive, deferential
+- Must be dismissible/tuck-away by default — don't build it as a persistent modal or blocking panel.
+- Suggestions only — the copilot proposes, the user commits. Any code path where the copilot takes action without a user confirmation click/keystroke violates the posture; flag it if you see it.
+- Trigger proactive surfacing off real signals (state changes, detected friction) rather than a timer — a copilot that interrupts on a schedule reads as an alert, not a copilot.
+
+## Cross-posture check
+
+Before finishing a scaffold, verify the build actually reflects its assigned posture's initiative/UI-presence/failure-handling choices above — not just its visual theme. If two posture-prototypes in this repo end up with identical interaction logic and only differ in CSS or copy, that's a sign the bifurcation collapsed — flag it to the user rather than shipping it silently.

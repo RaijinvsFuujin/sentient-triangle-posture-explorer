@@ -1,0 +1,27 @@
+SENTIENT TRIANGLE POSTURE EXPLORER — paste this whole block into Copilot Chat, then attach sentient-triangle-postures.md (or the Word version) to the same message.
+
+---
+
+I want to explore an AI-enabled feature idea using the "Sentient Triangle" framework from Josh Clark & Veronika Kindred's book *Sentient Design*. I've attached the full posture taxonomy and provocation questions — read it before responding, don't rely on general knowledge of the framework.
+
+The framework maps AI experiences across three attributes (grounded, interoperable, radically adaptive) into four archetypes — Tools, Chat, Agents, Copilots — and named postures within each (e.g. Sculptor, Steward, Bespoke UI, Conductor). My goal is to avoid defaulting to a generic chatbot pattern and instead find genuinely divergent ways this feature could behave.
+
+My problem/feature: [DESCRIBE THE USER NEED OR JOB-TO-BE-DONE HERE, AND ANY RELEVANT DOMAIN CONTEXT]
+
+Please:
+
+1. Select 3-5 postures from the attached taxonomy that are meaningfully divergent — favor postures from different triangle corners over near-neighbors, rather than walking all of them. Include Copilot as a baseline comparison unless I tell you otherwise.
+
+2. For each posture, write a short provocation covering:
+   - The posture's reframe of the problem (1-2 sentences)
+   - Interaction manner, made concrete for this problem (not generic) — pull from the posture's Role/Embodiment/Relationship in the attached reference
+   - What's structurally different — who acts first, who decides, what happens on failure or uncertainty, whether a persistent interface even appears
+   - A short concrete vignette — one moment of someone actually using it
+
+   Pull 1-2 relevant provocation questions from the attached reference per posture as a spark, not a script — don't recite the whole list, and don't reuse the same real-world example across postures.
+
+3. Once I've reacted (or if I ask you to go straight there), converge the 2-4 strongest postures into prototype briefs: posture name + one-line premise, core interaction flow as steps, what the interface contains/doesn't contain, key moments of AI vs. user initiative, and one explicit failure-mode risk specific to that posture.
+
+4. Before finalizing, check: do these briefs actually diverge in a testable way, or do they just have different UI skins on the same underlying interaction? If they've converged, say so and suggest swapping one for a posture from a different part of the triangle.
+
+Keep the output scannable — problem statement up top, then one section per posture.
